@@ -1,0 +1,275 @@
+'use client';
+
+import Footer from "@/components/footer"
+import Navbar from "@/components/navbar"
+import { Button } from "@/components/ui/button"
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Popover } from "@/components/ui/popover"
+import { PopoverContent, PopoverTrigger } from "@radix-ui/react-popover"
+import { CheckIcon, ChevronsUpDownIcon, DollarSignIcon, EarthIcon, PersonStandingIcon, Shield, ShieldIcon, StarIcon, StarsIcon } from "lucide-react"
+import { STEPS } from "@/lib/data/steps";
+import HowItWorkCard from "@/components/how-it-work-card";
+import ServiceCard from "@/components/service";
+import React from "react"
+import { OUR_SERVICES } from "@/lib/data/our-services";
+
+export default function Page() {
+  const [open, setOpen] = React.useState(false);
+  const [sizeOfMove, setSizeOfMove] = React.useState("");
+
+  const sizeList = [
+    { value: "1", label: "1 Bedroom" },
+    { value: "2", label: "2 Bedroom" },
+    { value: "3", label: "3 Bedroom" },
+  ]
+
+  return (
+    <main className="">
+      {/* Header Section */}
+      <header className="relative text-white w-full">
+        <img src={"/truck-highway-sunset.jpg"} alt="truck image" className="relative max-h-[800px] w-full brightness-50" />
+        <div className="w-3/4 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col md:flex-row justify-between items-center gap-20">
+
+          {/* Header Text */}
+          <div className="w-3/5 flex flex-col items-start gap-6">
+            <span className="px-3 rounded-2xl bg-blue-600 text-sm font-semibold">🏆 Trusted Moving Professionals</span>
+            <h1 className="text-3xl md:text-6xl font-semibold">Stress-Free, Reliable <span className="text-blue-400"> Moving Services</span></h1>
+            <p className="text-lg">Experience seamless moving with our professional team. From residential moves to commercial relocations, we handle your belongings with care and precision.</p>
+          </div>
+
+          {/* Header Quote Form */}
+          <div className="w-3/5 flex flex-col justify-between items-stretch gap-4 p-6 bg-[#f9f7f5] shadows-2xl shadow-slate-200 border-2 border-gray-200 rounded-2xl text-[#141327]">
+            <h3 className="text-2xl font-bold mb-6">Get a Free Quote</h3>
+
+            {/* Full Name */}
+            <div className="grid w-full items-center gap-3">
+              <Label htmlFor="full-name">Full Name</Label>
+              <Input type="text" id="full-name" placeholder="Full Name" />
+            </div>
+
+            {/* Email Adress */}
+            <div className="grid w-full items-center gap-3">
+              <Label htmlFor="email">Email</Label>
+              <Input type="email" id="email" placeholder="Email" />
+            </div>
+
+            {/* Phone Number */}
+            <div className="grid w-full items-center gap-3">
+              <Label htmlFor="phone-number">Phone Number</Label>
+              <Input type="number" id="phone-number" placeholder="Phone Number" />
+            </div>
+
+            <div className="flex justify-between items-center gap-4">
+              {/* Moving From */}
+              <div className="grid w-full max-w-sm items-center gap-3">
+                <Label htmlFor="from">Moving From</Label>
+                <Input type="text" id="from" placeholder="City/Province" />
+              </div>
+              {/* Moving To */}
+              <div className="grid w-full max-w-sm items-center gap-3">
+                <Label htmlFor="to">Moving To</Label>
+                <Input type="text" id="to" placeholder="City/Province" />
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center gap-4">
+              {/* Date */}
+              <div className="grid w-full items-center gap-3">
+                <Label htmlFor="date">Date</Label>
+                <Input type="date" id="date" placeholder="Date" />
+              </div>
+              {/* Size Of Move */}
+              <div className="grid w-full items-center gap-3">
+                <Label htmlFor="size">Size Of Move</Label>
+                <Popover open={open} onOpenChange={setOpen}>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      role="combobox"
+                      aria-expanded={open}
+                      className="justify-between bg-accent"
+                    >
+                      {sizeOfMove
+                        ? sizeList.find((size) => size.value === sizeOfMove)?.label
+                        : "Select Size..."}
+                      <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                    </Button>
+                  </PopoverTrigger>
+
+                  <PopoverContent className="w-[200px] p-0">
+                    <Command>
+                      <CommandInput placeholder="Search Size..." />
+                      <CommandList>
+                        <CommandEmpty>No size found.</CommandEmpty>
+                        <CommandGroup>
+                          {sizeList.map((size) => (
+                            <CommandItem
+                              key={size.value}
+                              value={size.value}
+                              onSelect={(currentValue) => {
+                                setSizeOfMove(currentValue === sizeOfMove ? "" : currentValue)
+                                setOpen(false)
+                              }}
+                            >
+                              <CheckIcon className={sizeOfMove === size.value ? "opacity-100" : "opacity-0"} />
+                              {size.label}
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </CommandList>
+                    </Command>
+                  </PopoverContent>
+                </Popover>
+              </div>
+            </div>
+
+            <Button variant={"default"} size={"lg"} className="mt-6"> Get My Free Quote</Button>
+          </div>
+
+        </div>
+      </header>
+
+      {/* How It Works Section */}
+      <section className="bg-[#f9fafb] flex flex-col items-center justify-center gap-10 py-36 px-10">
+        <h3 className="text-4xl font-bold text-center">How It Works</h3>
+        <p className="text-lg text-gray-700 text-center md:mb-10">Our comprehensive 5-step process ensures your move is handled with professional care <br /> and attention to every detail, from initial planning to settling into your new space.</p>
+        <div className="flex gap-3 flex-wrap justify-center px-40">
+          {STEPS.map(s => (
+            <HowItWorkCard key={s.id} step={s} />
+          ))}
+        </div>
+
+        <div className="w-full bg-blue-700 text-white flex flex-col items-center gap-6 p-8 rounded-2xl text-center">
+          <h3 className="text-2xl font-bold">Ready to Experience Our Process?</h3>
+          <p>Our proven 5-step method has successfully moved over 15,000 families and businesses. <br /> Let us make your next move the smoothest one yet.</p>
+          <div className="flex gap-3 justify-center">
+            <Button variant={"secondary"} size={"lg"}>Get Your Free Quote</Button>
+            <Button variant={"secondary"} size={"lg"}>Contact Us</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Services */}
+      <section className="flex flex-col gap-10 items-center pb-36 pt-16 px-10">
+        <h3 className="text-4xl font-bold text-center">Our Services</h3>
+        <p className="text-lg text-gray-700 text-center md:mb-10">Comprehensive moving solutions tailored to your specific needs</p>
+
+        <div className="flex gap-10 justify-between items-start">
+          <div className="w-2/4 flex flex-col items-center justify-center gap-10 ">
+            <div className="w-full flex flex-col items-stretch gap-6">
+              {OUR_SERVICES.map(service => (
+                <ServiceCard key={service.id} service={service} />
+              ))}
+            </div >
+          </div>
+          <div className="w-[45%] h-full">
+            <img className=" border-2 border-gray-100 rounded-2xl " src={"/our-services.jpg"} />
+          </div>
+        </div>
+      </section >
+
+      {/* What Our Customers Say */}
+      <section className="flex flex-col items-center justify-center gap-10 pb-36 px-10">
+        <h3 className="text-4xl font-bold text-center">What Our Customers Say</h3>
+        <p className="text-lg text-gray-700 text-center md:mb-10">Real experiences from satisfied customers who trusted us with their moves</p>
+
+        <div className="w-full flex gap-5 justify-center">
+
+          <div className="shadow-2xl p-8 rounded-2xl flex flex-col items-start gap-5 w-[30%]">
+            <div className="flex gap-1">
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+            </div>
+            <p className="italic gray-700">"Metro Moving made our cross-country move seamless. The team was professional, efficient, and took great care of our belongings. Highly recommended!"</p>
+            <div className="flex gap-3 items-center">
+              <div className="bg-blue-300 rounded-full px-5 py-3 font-bold" >
+                S
+              </div>
+              <div>
+                <div className="text-lg font-semibold text-black">Sarah Johnson (Ontario, Toronto)</div>
+                <div className="text-gray-700">Residential Customer</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="shadow-2xl p-8 rounded-2xl flex flex-col items-start gap-5 w-[30%]">
+            <div className="flex gap-1">
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+            </div>
+            <p className="italic gray-700">"Stored our furniture for 3 months during our move from Vancouver to Dallas. Everything was in perfect condition and the storage facility was incredibly secure!"</p>
+            <div className="flex gap-3 items-center">
+              <div className="bg-blue-300 rounded-full px-5 py-3 font-bold" >
+                J
+              </div>
+              <div>
+                <div className="text-lg font-semibold text-black">Jennifer Martinez (Alberta, Calgary)</div>
+                <div className="text-gray-700">Storage Customer</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="shadow-2xl p-8 rounded-2xl flex flex-col items-start gap-5 w-[30%]">
+            <div className="flex gap-1">
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+              <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
+            </div>
+            <p className="italic gray-700">"Excellent service for our office relocation. They completed the move over the weekend with zero disruption to our business operations. Outstanding work!"</p>
+            <div className="flex gap-3 items-center">
+              <div className="bg-blue-300 rounded-full px-4 py-3 font-bold" >
+                M
+              </div>
+              <div>
+                <div className="text-lg font-semibold text-black">Michael Chen (Alberta, Calgary)</div>
+                <div className="text-gray-700">Business Owner</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section className="bg-blue-700 flex flex-col items-center justify-center gap-5 py-36 px-10 text-white">
+        <h3 className="text-4xl font-bold text-center">Why Choose Metro Moving?</h3>
+        <p className="text-lg text-gray-200 text-center md:mb-10">We're committed to providing exceptional moving services that <br /> exceed your expectations</p>
+
+        <div className="md:w-2/3 flex gap-5 justify-center">
+
+          {/* Licensed & Insured */}
+          <div className="w-1/3 flex flex-col justify-center items-center gap-3">
+            <div className="p-5 rounded-full bg-blue-800"> <ShieldIcon size={"24"} /> </div>
+            <div className="text-lg font-semibold">Licensed & Insured</div>
+            <div className="text-gray-200 text-center">Fully licensed and insured for your peace of mind. Your belongings are protected every step of the way.</div>
+          </div>
+
+          {/* Affordable Rates */}
+          <div className="w-1/3 flex flex-col justify-center items-center gap-3">
+            <div className="p-5 rounded-full bg-blue-800"> <DollarSignIcon size={"24"} /> </div>
+            <div className="text-lg font-semibold">Affordable Rates</div>
+            <div className="text-gray-200 text-center">Competitive pricing without compromising on quality. No hidden fees, just transparent and fair pricing.</div>
+          </div>
+
+          {/* Nationwide Coverage */}
+          <div className="w-1/3 flex flex-col justify-center items-center gap-3">
+            <div className="p-5 rounded-full bg-blue-800"> <EarthIcon size={"24"} /> </div>
+            <div className="text-lg font-semibold">Nationwide Coverage</div>
+            <div className="text-gray-200 text-center">Local, long-distance, and cross-country moves. We go wherever you need to go.</div>
+          </div>
+
+        </div>
+      </section>
+
+    </main >
+  )
+}
