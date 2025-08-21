@@ -1,48 +1,76 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { BoxesIcon, BoxIcon, CircleCheckBigIcon, Clock5Icon, ShieldIcon } from "lucide-react";
+import { motion } from "framer-motion"
 
 export default function Page() {
+  const container = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 24 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+
   return (
     <>
-      <div className="bg-fuchsia-100 flex flex-col items-center gap-5 lg:text-center py-10 md:py-20 max-md:px-2 text-center">
-        <span className={`px-3 py-1 rounded-2xl bg-fuchsia-200 text-fuchsia-800 text-sm flex items-center gap-2`}>📦 Secure Storage Solutions</span>
-        <p className="text-5xl text-gray-800 font-bold">Storage Services</p>
-        <p className="text-lg text-gray-500 md:w-1/2">Whether you need temporary storage during your Canada-US move or long-term solutions for your belongings, our state-of-the-art facilities provide the security and flexibility you need.</p>
-        <Button variant={"secondary"} size={"lg"}>Get Your Free Quote</Button>
-      </div>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="bg-fuchsia-100 flex flex-col items-center gap-5 lg:text-center py-10 md:py-20 max-md:px-2 text-center"
+      >
+        <motion.span variants={item} className={`px-3 py-1 rounded-2xl bg-fuchsia-200 text-fuchsia-800 text-sm flex items-center gap-2`}>📦 Secure Storage Solutions</motion.span>
+        <motion.p variants={item} className="text-5xl text-gray-800 font-bold">Storage Services</motion.p>
+        <motion.p variants={item} className="text-lg text-gray-500 md:w-1/2">Whether you need temporary storage during your Canada-US move or long-term solutions for your belongings, our state-of-the-art facilities provide the security and flexibility you need.</motion.p>
+        <motion.div variants={item}><Button variant={"secondary"} size={"lg"}>Get Your Free Quote</Button></motion.div>
+      </motion.div>
 
-      <div className="flex flex-col md:flex-row justify-center items-center gap-5 py-10 md:py-28 px-2 md:px-40">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex flex-col md:flex-row justify-center items-center gap-5 py-10 md:py-28 px-2 md:px-40"
+      >
         <div className="md:w-2/5 max-md:order-2">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">Premium Storage Facilities</h3>
-          <p className="text-gray-700">Our storage facilities are strategically located on both sides of the Canada-US border, providing convenient access whether you're storing items temporarily during a move or need long-term storage solutions for your personal or business belongings.</p>
+          <motion.h3 variants={item} className="text-3xl font-bold text-gray-900 mb-4">Premium Storage Facilities</motion.h3>
+          <motion.p variants={item} className="text-gray-700">Our storage facilities are strategically located on both sides of the Canada-US border, providing convenient access whether you're storing items temporarily during a move or need long-term storage solutions for your personal or business belongings.</motion.p>
 
           <div className="p-5 flex flex-col gap-3">
-            <div className="flex items-start gap-4 text-start">
+            <motion.div variants={item} className="flex items-start gap-4 text-start">
               <CircleCheckBigIcon className="text-green-500 size-6" />
               <div>
                 <div className="font-semibold">Climate-Controlled Environment</div>
                 <div className="text-gray-700">Temperature and humidity controlled to protect sensitive items</div>
               </div>
-            </div>
-            <div className="flex items-start gap-4 text-start">
+            </motion.div>
+            <motion.div variants={item} className="flex items-start gap-4 text-start">
               <CircleCheckBigIcon className="text-green-500 size-6" />
               <div>
                 <div className="font-semibold">24/7 Security Monitoring</div>
                 <div className="text-gray-700">Advanced surveillance systems and on-site security personnel</div>
               </div>
-            </div>
-            <div className="flex items-start gap-4 text-start">
+            </motion.div>
+            <motion.div variants={item} className="flex items-start gap-4 text-start">
               <CircleCheckBigIcon className="text-green-500 size-6" />
               <div>
                 <div className="font-semibold">Flexible Access</div>
                 <div className="text-gray-700">Extended hours and easy access to your stored belongings</div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
-        <img src={"/storage-service.jpg"} className="rounded-xl w-2xl max-md:order-1" />
-      </div>
+        <motion.img variants={item} src={"/storage-service.jpg"} className="rounded-xl w-2xl max-md:order-1" />
+      </motion.div>
 
       <div className="py-10 md:py-28 px-2 md:px-40 bg-gray-50">
         <div className="flex flex-col items-center text-center gap-5 mb-10">
