@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Popover } from "@/components/ui/popover"
 import { PopoverContent, PopoverTrigger } from "@radix-ui/react-popover"
-import { CheckIcon, ChevronsUpDownIcon, DollarSignIcon, EarthIcon, PersonStandingIcon, Shield, ShieldIcon, StarIcon, StarsIcon } from "lucide-react"
+import { CheckIcon, ChevronsUpDownIcon, CircleCheckBigIcon, DollarSignIcon, EarthIcon, PersonStandingIcon, Shield, ShieldIcon, StarIcon, StarsIcon } from "lucide-react"
 import { STEPS } from "@/lib/data/steps";
 import HowItWorkCard from "@/components/how-it-work-card";
 import ServiceCard from "@/components/service";
@@ -131,6 +131,107 @@ export default function Page() {
 
         <img src={"/truck-highway-sunset.jpg"} alt="truck image" className="relative max-h-[800px] w-[95%] md:w-full brightness-50 max-md:mt-6 max-md:rounded-xl max-md:mx-auto" />
       </header>
+
+
+
+      <section className="flex flex-col items-center justify-center gap-10 py-16 md:py-32 px-2 md:px-10">
+        <div>
+          <div className="flex flex-col items-center text-center gap-5">
+            <h3 className="text-4xl text-gray-800 font-bold">Cross-Border Moving Expertise</h3>
+            <p className="text-lg text-gray-600 md:w-1/2">Moving between Canada and the US involves complex regulations, documentation, and logistics. Our specialized knowledge ensures your international move is handled with precision and care.</p>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-5 justify-center mt-10">
+            {/* "Canada to USA" Card */}
+            <div className="shadow-2xl md:w-1/2 rounded-2xl">
+              <div className="bg-red-100 flex justify-center items-center gap-5 p-5 rounded-t-2xl">
+                <div className="p-5 rounded-full bg-red-700">
+                  <EarthIcon className="size-8 md:size-12 text-white" />
+                </div>
+                <div >
+                  <h4 className="text-2xl text-gray-800 font-bold">🍁 Canada To USA</h4>
+                  <p className="text-lg text-gray-500">Seamless relocations from any Canadian province to US states</p>
+                </div>
+              </div>
+
+              <div className="p-5 flex flex-col gap-3">
+                <div className="flex items-start gap-4 text-start">
+                  <CircleCheckBigIcon className="text-green-500 size-6" />
+                  <div>
+                    <div className="font-semibold">Immigration Documentation</div>
+                    <div className="text-gray-700">Complete assistance with visa requirements and customs forms</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 text-start">
+                  <CircleCheckBigIcon className="text-green-500 size-6" />
+                  <div>
+                    <div className="font-semibold">Duty & Tax Management</div>
+                    <div className="text-gray-700">Expert handling of customs duties and import regulations</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 text-start">
+                  <CircleCheckBigIcon className="text-green-500 size-6" />
+                  <div>
+                    <div className="font-semibold">Vehicle Transportation</div>
+                    <div className="text-gray-700">Specialized car shipping with all required certifications</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 text-start">
+                  <CircleCheckBigIcon className="text-green-500 size-6" />
+                  <div>
+                    <div className="font-semibold">Storage Solutions</div>
+                    <div className="text-gray-700">Temporary storage during transition periods</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div className="shadow-2xl md:w-1/2 rounded-2xl">
+              <div className="bg-blue-100 flex justify-center items-center gap-5 p-5 rounded-t-2xl">
+                <div className="p-5 rounded-full bg-blue-700">
+                  <EarthIcon className="size-8 md:size-12 text-white" />
+                </div>
+                <div >
+                  <h4 className="text-2xl text-gray-800 font-bold"> 🇺🇸  USA to Canada</h4>
+                  <p className="text-lg text-gray-500">Professional moves from US states to Canadian provinces</p>
+                </div>
+              </div>
+
+              <div className="p-5 flex flex-col gap-3">
+                <div className="flex items-start gap-4 text-start">
+                  <CircleCheckBigIcon className="text-green-500 size-6" />
+                  <div>
+                    <div className="font-semibold">Canadian Immigration Support</div>
+                    <div className="text-gray-700">Guidance through Canadian immigration procedures</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 text-start">
+                  <CircleCheckBigIcon className="text-green-500 size-6" />
+                  <div>
+                    <div className="font-semibold">CBSA Compliance</div>
+                    <div className="text-gray-700">Full compliance with Canada Border Services Agency</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 text-start">
+                  <CircleCheckBigIcon className="text-green-500 size-6" />
+                  <div>
+                    <div className="font-semibold">Provincial Regulations</div>
+                    <div className="text-gray-700">Expert knowledge of provincial moving requirements</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 text-start">
+                  <CircleCheckBigIcon className="text-green-500 size-6" />
+                  <div>
+                    <div className="font-semibold">Healthcare Transition</div>
+                    <div className="text-gray-700">Information on healthcare system transitions</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* How It Works Section */}
       <section className="bg-[#f9fafb] flex flex-col items-center justify-center gap-10 py-16 md:py-36 px-2 md:px-10">

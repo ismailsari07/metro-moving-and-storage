@@ -12,7 +12,7 @@ export default function Page() {
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-5 py-10 md:py-28 px-2 md:px-40">
-        <div className="md:w-2/5">
+        <div className="md:w-2/5 max-md:order-2">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Premium Storage Facilities</h3>
           <p className="text-gray-700">Our storage facilities are strategically located on both sides of the Canada-US border, providing convenient access whether you're storing items temporarily during a move or need long-term storage solutions for your personal or business belongings.</p>
 
@@ -41,7 +41,7 @@ export default function Page() {
           </div>
         </div>
 
-        <img src={"/storage-service.jpg"} className="rounded-xl w-2xl" />
+        <img src={"/storage-service.jpg"} className="rounded-xl w-2xl max-md:order-1" />
       </div>
 
       <div className="py-10 md:py-28 px-2 md:px-40 bg-gray-50">

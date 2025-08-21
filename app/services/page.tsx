@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CircleCheckBigIcon, HomeIcon, ShoppingBagIcon, StoreIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function Services() {
   return (
@@ -44,7 +45,7 @@ export default function Services() {
               </div>
             </div>
 
-            <Button className="w-full" variant={"outline"}>Learn More</Button>
+            <Link href={"/services/storage-service"}><Button className="w-full" variant={"outline"}>Learn More</Button></Link>
           </div>
 
           {/* Service 2 */}
@@ -75,7 +76,7 @@ export default function Services() {
               </div>
             </div>
 
-            <Button className="w-full" variant={"outline"}>Learn More</Button>
+            <Link href={"/services/commercial-moving"}><Button className="w-full" variant={"outline"}>Learn More</Button></Link>
           </div>
 
           {/* Service 3 */}
@@ -106,7 +107,7 @@ export default function Services() {
               </div>
             </div>
 
-            <Button className="w-full" variant={"outline"}>Learn More</Button>
+            <Link href={"/services/residential-moving"}><Button className="w-full" variant={"outline"}>Learn More</Button></Link>
           </div>
 
         </div>

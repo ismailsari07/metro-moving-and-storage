@@ -84,7 +84,7 @@ export default function Page() {
             {/* Date */}
             <div className="grid w-full items-center gap-3">
               <Label htmlFor="date">Date</Label>
-              <Input type="date" id="date" placeholder="Date" />
+              <Input type="date" id="date" placeholder="Date" defaultValue={new Date().toISOString().split("T")[0]} />
             </div>
             {/* Size Of Move */}
             <div className="grid w-full items-center gap-3">

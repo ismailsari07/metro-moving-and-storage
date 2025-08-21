@@ -1,5 +1,6 @@
 import { FacebookIcon, InstagramIcon, TwitterIcon } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -16,22 +17,21 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-3 max-md:text-center">
           <div className="text-lg font-semibold">Services</div>
-          <div className="text-gray-400">Residential Moving</div>
-          <div className="text-gray-400">Commercial Moving</div>
-          <div className="text-gray-400">Storage Services</div>
-          <div className="text-gray-400">Long Distance</div>
+          <Link href={"/services/residential-moving"} className="text-gray-400">Residential Moving</Link>
+          <Link href={"/services/commercial-moving"} className="text-gray-400">Commercial Moving</Link>
+          <Link href={"/services/storage-service"} className="text-gray-400">Storage Services</Link>
         </div>
         <div className="flex flex-col gap-3 max-md:text-center">
           <div className="text-lg font-semibold">Company</div>
-          <div className="text-gray-400">About Us</div>
-          <div className="text-gray-400">Contact Us</div>
-          <div className="text-gray-400">Services</div>
+          <Link href={"/about"} className="text-gray-400">About</Link>
+          <Link href={"/contact"} className="text-gray-400">Contact</Link>
+          <Link href={"/services"} className="text-gray-400">Services</Link>
         </div>
         <div className="flex flex-col gap-3 max-md:text-center">
           <div className="text-lg font-semibold">Company</div>
           <div className="text-gray-400">(555) 123 Move</div>
           <div className="text-gray-400">info@metromoving.com</div>
-          <div className="text-gray-400">Location</div>
+          <div className="text-gray-400">Mississauga, Ontario, Canada</div>
         </div>
       </div>
       <hr className="border-gray-700" />
