@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BadgeHelpIcon, CalculatorIcon, CircleCheckBigIcon, EarthIcon, LaptopIcon } from "lucide-react";
 import { motion } from "framer-motion"
 import type { Variants } from "framer-motion"
+import Link from "next/link";
 
 export default function Page() {
   const container = {
@@ -38,7 +39,9 @@ export default function Page() {
         <motion.span variants={item} className={`px-3 py-1 rounded-2xl bg-green-200 text-green-800 text-sm flex items-center gap-2`}>🏢 Enterprise Business Moving</motion.span>
         <motion.p variants={item} className="text-5xl text-gray-800 font-bold">Commercial Moving Services</motion.p>
         <motion.p variants={item} className="text-lg text-gray-500 md:w-1/2">Expand your business across Canada-US borders with minimal downtime. Our commercial moving specialists understand that time is money, ensuring your office relocation is efficient, secure, and seamless.</motion.p>
-        <motion.div variants={item}><Button variant={"secondary"} size={"lg"}>Get Your Free Quote</Button></motion.div>
+        <motion.div variants={item}>
+          <Link href={"/contact"}><Button variant={"secondary"}>Get Your Quote Today</Button></Link>
+        </motion.div>
       </motion.div>
 
       <motion.div

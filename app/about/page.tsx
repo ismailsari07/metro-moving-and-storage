@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CircleCheckBigIcon, Clock2Icon, EarthIcon, LocationEditIcon, PersonStandingIcon, ShieldIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion"
+import Link from "next/link";
 
 
 export default function Page() {
@@ -22,6 +23,7 @@ export default function Page() {
       // bazen ease'in string tipi eski sürümlerde şikayet eder:
       // istersen alttaki satırı cubic-bezier'e çevir:
       transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+
       // veya geçici: ease: "easeOut" as any
     },
   };
@@ -33,13 +35,13 @@ export default function Page() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-
-        className="bg-[#e5e4ff] flex flex-col items-center gap-5 lg:text-center py-20">
+        className="bg-[#e5e4ff] flex flex-col items-center gap-5 lg:text-center py-20"
+      >
         <motion.span variants={item} className={`px-3 py-1 rounded-2xl bg-slate-100 text-blue-800 text-sm flex items-center gap-2`}>🍁🇺🇸 Cross-Border Moving Specialists</motion.span>
         <motion.p variants={item} className="text-5xl text-gray-800 font-bold max-md:text-center">Your Trusted Partner for <br /><span className="text-blue-900">Canada-US Moving</span></motion.p>
         <motion.p variants={item} className="md:w-1/2 text-lg text-gray-500 max-md:text-center">For over 15 years, we've been the leading interprovincial moving company, specializing in seamless relocations between Canada and the United States. We understand the complexities of cross-border moves and make them simple for you.</motion.p>
         <motion.div variants={item} className="flex justify-center items-center gap-3">
-          <Button variant={"secondary"}>Get Your Quote Today</Button>
+          <Link href={"/contact"}><Button variant={"secondary"}>Get Your Quote Today</Button></Link>
         </motion.div>
       </motion.div>
 

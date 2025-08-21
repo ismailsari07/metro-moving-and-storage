@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BoxesIcon, BoxIcon, CircleCheckBigIcon, Clock5Icon, ShieldIcon } from "lucide-react";
 import { motion } from "framer-motion"
 import type { Variants } from "framer-motion"
+import Link from "next/link";
 
 
 export default function Page() {
@@ -39,7 +40,10 @@ export default function Page() {
         <motion.span variants={item} className={`px-3 py-1 rounded-2xl bg-fuchsia-200 text-fuchsia-800 text-sm flex items-center gap-2`}>📦 Secure Storage Solutions</motion.span>
         <motion.p variants={item} className="text-5xl text-gray-800 font-bold">Storage Services</motion.p>
         <motion.p variants={item} className="text-lg text-gray-500 md:w-1/2">Whether you need temporary storage during your Canada-US move or long-term solutions for your belongings, our state-of-the-art facilities provide the security and flexibility you need.</motion.p>
-        <motion.div variants={item}><Button variant={"secondary"} size={"lg"}>Get Your Free Quote</Button></motion.div>
+        <motion.div variants={item}>
+          <Link href={"/contact"}><Button variant={"secondary"}>Get Your Quote Today</Button></Link>
+        </motion.div>
+
       </motion.div>
 
       <motion.div
