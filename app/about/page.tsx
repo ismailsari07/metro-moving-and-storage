@@ -3,25 +3,25 @@ import { CircleCheckBigIcon, Clock2Icon, EarthIcon, LocationEditIcon, PersonStan
 
 export default function Page() {
   return (
-    <div>
+    <div className="max-md:px-2">
       <div className="bg-[#e5e4ff] flex flex-col items-center gap-5 lg:text-center py-20">
         <span className={`px-3 py-1 rounded-2xl bg-slate-100 text-blue-800 text-sm flex items-center gap-2`}>🍁🇺🇸 Cross-Border Moving Specialists</span>
-        <p className="text-5xl text-gray-800 font-bold">Your Trusted Partner for <br /><span className="text-blue900">Canada-US Moving</span></p>
-        <p className="w-1/2 text-lg text-gray-500">For over 15 years, we've been the leading interprovincial moving company, specializing in seamless relocations between Canada and the United States. We understand the complexities of cross-border moves and make them simple for you.</p>
+        <p className="text-5xl text-gray-800 font-bold max-md:text-center">Your Trusted Partner for <br /><span className="text-blue-900">Canada-US Moving</span></p>
+        <p className="md:w-1/2 text-lg text-gray-500 max-md:text-center">For over 15 years, we've been the leading interprovincial moving company, specializing in seamless relocations between Canada and the United States. We understand the complexities of cross-border moves and make them simple for you.</p>
         <div className="flex justify-center items-center gap-3">
           <Button variant={"secondary"}>Get Your Quote Today</Button>
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-5 py-28 px-40">
-        <div className="w-2/5">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-5 py-28 md:px-40">
+        <div className="md:w-2/5">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Story</h3>
           <p className="text-gray-700">Founded in 2009, Metro Moving & Storage began with a simple mission: to make cross-border moving between Canada and the United States as seamless as moving within the same city. What started as a small family business in Toronto has grown into one of Canada's most trusted interprovincial moving companies.</p> <br />
           <p className="text-gray-700">We recognized early on that families and businesses needed more than just transportation—they needed a partner who understood immigration requirements, customs regulations, and the unique challenges of international relocation. Today, we've successfully completed over 12,000 cross-border moves, helping families and businesses start new chapters in their lives.</p> <br />
           <p className="text-gray-700">Our expertise spans all major routes between Canadian provinces and US states, with specialized knowledge of border crossings, documentation requirements, and regulatory compliance that ensures your move is completed without delays or complications.</p>
         </div>
 
-        <div className="w-2xl bg-[#e5e4ff] flex flex-wrap justify-center gap-5 rounded-2xl p-5">
+        <div className="md:w-2xl bg-[#e5e4ff] flex flex-wrap justify-center gap-5 rounded-2xl p-5">
           <div className="w-72 h-60 p-3 bg-white flex flex-col gap-3 justify-center rounded-2xl items-center text-center">
             <div className="p-5 bg-blue-100 rounded-full"><LocationEditIcon className="size-12 text-blue-600" /></div>
             <h4 className="text-xl font-semibold">Cross-Border Experties</h4>
@@ -48,18 +48,18 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="py-28 px-40 bg-gray-50">
+      <div className="py-28 md:px-40 bg-gray-50">
         <div className="flex flex-col items-center text-center gap-5">
           <h3 className="text-4xl text-gray-800 font-bold">Cross-Border Moving Expertise</h3>
           <p className="text-lg text-gray-600 md:w-1/2">Moving between Canada and the US involves complex regulations, documentation, and logistics. Our specialized knowledge ensures your international move is handled with precision and care.</p>
         </div>
 
-        <div className="flex gap-5 justify-center mt-20">
+        <div className="flex flex-col md:flex-row gap-5 justify-center mt-20">
           {/* "Canada to USA" Card */}
-          <div className="shadow-2xl w-1/2 rounded-2xl">
+          <div className="shadow-2xl md:w-1/2 rounded-2xl">
             <div className="bg-red-100 flex justify-center items-center gap-5 p-5 rounded-t-2xl">
               <div className="p-5 rounded-full bg-red-700">
-                <EarthIcon className="size-12 text-white" />
+                <EarthIcon className="size-8 md:size-12 text-white" />
               </div>
               <div >
                 <h4 className="text-2xl text-gray-800 font-bold">🍁 Canada To USA</h4>
@@ -99,10 +99,10 @@ export default function Page() {
             </div>
 
           </div>
-          <div className="shadow-2xl w-1/2 rounded-2xl">
+          <div className="shadow-2xl md:w-1/2 rounded-2xl">
             <div className="bg-blue-100 flex justify-center items-center gap-5 p-5 rounded-t-2xl">
               <div className="p-5 rounded-full bg-blue-700">
-                <EarthIcon className="size-12 text-white" />
+                <EarthIcon className="size-8 md:size-12 text-white" />
               </div>
               <div >
                 <h4 className="text-2xl text-gray-800 font-bold"> 🇺🇸  USA to Canada</h4>

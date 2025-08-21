@@ -4,15 +4,15 @@ import { BadgeHelpIcon, CalculatorIcon, CircleCheckBigIcon, EarthIcon, LaptopIco
 export default function Page() {
   return (
     <>
-      <div className="bg-green-100 flex flex-col items-center gap-5 lg:text-center py-20">
+      <div className="bg-green-100 flex flex-col items-center gap-5 lg:text-center py-10 md:py-20 max-md:text-center max-md:px-2">
         <span className={`px-3 py-1 rounded-2xl bg-green-200 text-green-800 text-sm flex items-center gap-2`}>🏢 Enterprise Business Moving</span>
         <p className="text-5xl text-gray-800 font-bold">Commercial Moving Services</p>
         <p className="text-lg text-gray-500 md:w-1/2">Expand your business across Canada-US borders with minimal downtime. Our commercial moving specialists understand that time is money, ensuring your office relocation is efficient, secure, and seamless.</p>
         <Button variant={"secondary"} size={"lg"}>Get Your Free Quote</Button>
       </div>
 
-      <div className="flex justify-center items-center gap-5 py-28 px-40">
-        <div className="w-2/5">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-5 py-10 md:py-28 px-2 md:px-40">
+        <div className="md:w-2/5 max-md:order-2">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Minimize Business Disruption</h3>
           <p className="text-gray-700">When your business is ready to expand internationally, the last thing you need is extended downtime. Our commercial moving service is specifically designed for businesses relocating between Canada and the US, ensuring your operations continue with minimal interruption.</p>
 
@@ -41,19 +41,19 @@ export default function Page() {
           </div>
         </div>
 
-        <img src={"/commercial-moving.jpg"} className="rounded-xl w-2xl" />
+        <img src={"/commercial-moving.jpg"} className="rounded-xl w-2xl max-md:order-1" />
       </div>
 
-      <div className="py-28 px-40 bg-gray-50">
+      <div className="py-10 md:py-28 px-2 md:px-40 bg-gray-50">
         <div className="flex flex-col items-center text-center gap-5 mb-10">
           <h3 className="text-4xl text-gray-800 font-bold">Industries We Serve</h3>
           <p className="text-lg text-gray-600 md:w-1/2">From startups to enterprise corporations, we've successfully relocated businesses across all industries</p>
         </div>
 
-        <div className="flex gap-5 justify-center items-stretch">
+        <div className="flex flex-col md:flex-row gap-5 justify-center items-stretch">
 
           {/* Technology */}
-          <div className="w-1/5 flex gap-5 justify-center items-center text-center">
+          <div className="md:w-1/5 flex gap-5 justify-center items-center text-center">
             <div className="flex flex-col justify-center items-center gap-4 p-5 rounded-2xl bg-white">
               <div className="w-fit p-4 bg-blue-100 rounded-xl"><LaptopIcon className="size-6 text-blue-800" /></div>
               <h3 className="text-lg font-semibold text-gray-800" >Technology</h3>
@@ -62,7 +62,7 @@ export default function Page() {
           </div>
 
           {/* Professional Service */}
-          <div className="w-1/5 flex gap-5 justify-center items-center text-center">
+          <div className="md:w-1/5 flex gap-5 justify-center items-center text-center">
             <div className="flex flex-col justify-center items-center gap-4 p-5 rounded-2xl bg-white">
               <div className="w-fit p-4 bg-green-100 rounded-xl"><BadgeHelpIcon className="size-6 text-green-800" /></div>
               <h3 className="text-lg font-semibold text-gray-800" >Professional Services</h3>
@@ -71,7 +71,7 @@ export default function Page() {
           </div>
 
           {/* Manufacturing */}
-          <div className="w-1/5 flex gap-5 justify-center items-center text-center">
+          <div className="md:w-1/5 flex gap-5 justify-center items-center text-center">
             <div className="flex flex-col justify-center items-center gap-4 p-5 rounded-2xl bg-white">
               <div className="w-fit p-4 bg-fuchsia-100 rounded-xl"><EarthIcon className="size-6 text-fuchsia-800" /></div>
               <h3 className="text-lg font-semibold text-gray-800" >Manufacturing</h3>
@@ -80,7 +80,7 @@ export default function Page() {
           </div>
 
           {/* Corporate Offices */}
-          <div className="w-1/5 flex gap-5 justify-center items-center text-center">
+          <div className="md:w-1/5 flex gap-5 justify-center items-center text-center">
             <div className="flex flex-col justify-center items-center gap-4 p-5 rounded-2xl bg-white">
               <div className="w-fit p-4 bg-yellow-100 rounded-xl"><CalculatorIcon className="size-6 text-yellow-800" /></div>
               <h3 className="text-lg font-semibold text-gray-800" >Corporate Offices</h3>

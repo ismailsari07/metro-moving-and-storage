@@ -3,7 +3,7 @@ import { CalendarRangeIcon, CircleCheckBigIcon } from "lucide-react";
 
 export default function HowItWorkCard({ step }: { step: Step }) {
   return (
-    <div className="w-[30%] flex flex-col gap-4 justify-start items-center shadow-xl border-2 border-gray-300 rounded-2xl p-4">
+    <div className="w-full md:w-[30%] flex flex-col gap-4 justify-start items-center shadow-xl border-2 border-gray-300 rounded-2xl p-4">
       <div className="px-3 py-1 rounded-full bg-blue-600 text-white mr-auto">{step.id}</div>
       <img src={step.image} className="w-4/5 rounded-2xl" />
       <h3 className="text-2xl font-semibold">{step.title}</h3>

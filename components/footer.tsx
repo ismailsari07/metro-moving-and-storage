@@ -4,30 +4,30 @@ import { Button } from "./ui/button";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 pt-28 py-8 px-10 text-white">
-      <div className="flex items-center justify-between mb-18">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-5 mb-18">
         <div className="flex flex-col gap-4">
-          <div className="text-xl font-semibold">Metro Moving & Storage</div>
-          <div className="text-gray-400">Professional moving and storage services you <br /> can trust. Making your next move stress-free.</div>
-          <div className="flex gap-3 justify-start items-center">
+          <div className="text-xl font-semibold max-md:text-center">Metro Moving & Storage</div>
+          <div className="text-gray-400 max-md:text-center">Professional moving and storage services you <br className="max-md:hidden" /> can trust. Making your next move stress-free.</div>
+          <div className="flex gap-3 justify-center md:justify-start items-center">
             <Button variant={"ghost"} size={"icon"} ><TwitterIcon /></Button>
             <Button variant={"ghost"} size={"icon"} ><InstagramIcon /></Button>
             <Button variant={"ghost"} size={"icon"} ><FacebookIcon /></Button>
           </div>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 max-md:text-center">
           <div className="text-lg font-semibold">Services</div>
           <div className="text-gray-400">Residential Moving</div>
           <div className="text-gray-400">Commercial Moving</div>
           <div className="text-gray-400">Storage Services</div>
           <div className="text-gray-400">Long Distance</div>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 max-md:text-center">
           <div className="text-lg font-semibold">Company</div>
           <div className="text-gray-400">About Us</div>
           <div className="text-gray-400">Contact Us</div>
           <div className="text-gray-400">Services</div>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 max-md:text-center">
           <div className="text-lg font-semibold">Company</div>
           <div className="text-gray-400">(555) 123 Move</div>
           <div className="text-gray-400">info@metromoving.com</div>

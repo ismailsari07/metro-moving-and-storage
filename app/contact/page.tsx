@@ -22,14 +22,14 @@ export default function Page() {
     <div className="bg-gray-50">
 
       <div className="bg-[#e5e4ff] flex flex-col items-center gap-5 lg:text-center py-20">
-        <p className="text-5xl text-gray-800 font-bold">Your Trusted Partner for <br /><span className="text-blue900">Get In Touch</span></p>
-        <p className="w-1/2 text-lg text-gray-500">Ready to start your Canada-US move? Contact our expert team for a free consultation and quote.</p>
+        <p className="text-5xl text-gray-800 font-bold max-md:text-center">Your Trusted Partner for <br className="max-md:hidden" /><span className="text-blue-900">Get In Touch</span></p>
+        <p className="md:w-1/2 text-lg text-gray-500 max-md:text-center">Ready to start your Canada-US move? Contact our expert team for a free consultation and quote.</p>
       </div>
 
       <div className="flex flex-col gap-10 justify-center items-center py-28">
 
         {/* Contact Information */}
-        <div className="w-1/5 flex flex-col items-center gap-3">
+        <div className="md:w-1/5 flex flex-col items-center gap-3">
           <div className="flex gap-2 items-center text-green-300">
             <PhoneIcon className="size-6" /> <a href="tel:+4934838484">+1 (555) 482 39 93</a>
           </div>
@@ -43,10 +43,10 @@ export default function Page() {
           </div>
         </div>
 
-        <hr className="w-2/5 border-gray-300" />
+        <hr className="w-4/5 md:w-2/5 border-gray-300" />
 
         {/* Header Quote Form */}
-        <div className="w-2/5 flex flex-col justify-between items-stretch gap-4 p-6 bg-gray-100 shadows-2xl shadow-slate-200 border-2 border-gray-200 rounded-2xl text-[#141327]">
+        <div className="w-[95%] md:w-2/5 flex flex-col justify-between items-stretch gap-4 p-6 bg-gray-100 shadows-2xl shadow-slate-200 border-2 border-gray-200 rounded-2xl text-[#141327]">
           <h3 className="text-2xl font-bold mb-6">Get a Free Quote</h3>
 
           {/* Full Name */}

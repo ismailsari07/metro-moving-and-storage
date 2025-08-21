@@ -29,18 +29,17 @@ export default function Page() {
     <main className="">
       {/* Header Section */}
       <header className="relative text-white w-full">
-        <img src={"/truck-highway-sunset.jpg"} alt="truck image" className="relative max-h-[800px] w-full brightness-50" />
-        <div className="w-3/4 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col md:flex-row justify-between items-center gap-20">
+        <div className="md:w-3/4 md:absolute md:top-1/2 md:left-1/2 md:-translate-y-1/2 md:-translate-x-1/2 flex flex-col md:flex-row justify-between items-center md:gap-20 z-10">
 
           {/* Header Text */}
-          <div className="w-3/5 flex flex-col items-start gap-6">
-            <span className="px-3 rounded-2xl bg-blue-600 text-sm font-semibold">🏆 Trusted Moving Professionals</span>
-            <h1 className="text-3xl md:text-6xl font-semibold">Stress-Free, Reliable <span className="text-blue-400"> Moving Services</span></h1>
-            <p className="text-lg">Experience seamless moving with our professional team. From residential moves to commercial relocations, we handle your belongings with care and precision.</p>
+          <div className="md:w-3/5 flex flex-col items-center md:items-start gap-3 md:gap-6 max-md:p-2 max-md:my-6 max-md:text-center">
+            <span className="px-3 rounded-2xl bg-blue-600 text-xs md:text-sm md:font-semibold">🏆 Trusted Moving Professionals</span>
+            <h1 className="text-3xl md:text-6xl font-semibold text-gray-800 md:text-white">Stress-Free, Reliable <span className="text-blue-400"> Moving Services</span></h1>
+            <p className="text-lg text-gray-800 md:text-white">Experience seamless moving with our professional team. From residential moves to commercial relocations, we handle your belongings with care and precision.</p>
           </div>
 
           {/* Header Quote Form */}
-          <div className="w-3/5 flex flex-col justify-between items-stretch gap-4 p-6 bg-[#f9f7f5] shadows-2xl shadow-slate-200 border-2 border-gray-200 rounded-2xl text-[#141327]">
+          <div className="md:w-3/5 hidden md:flex flex-col justify-between items-stretch gap-4 p-3 md:p-6 max-md:mx-2 bg-[#f9f7f5] shadows-2xl shadow-slate-200 border-2 border-gray-200 rounded-2xl text-[#141327]">
             <h3 className="text-2xl font-bold mb-6">Get a Free Quote</h3>
 
             {/* Full Name */}
@@ -129,19 +128,21 @@ export default function Page() {
           </div>
 
         </div>
+
+        <img src={"/truck-highway-sunset.jpg"} alt="truck image" className="relative max-h-[800px] w-[95%] md:w-full brightness-50 max-md:mt-6 max-md:rounded-xl max-md:mx-auto" />
       </header>
 
       {/* How It Works Section */}
-      <section className="bg-[#f9fafb] flex flex-col items-center justify-center gap-10 py-36 px-10">
+      <section className="bg-[#f9fafb] flex flex-col items-center justify-center gap-10 py-16 md:py-36 px-2 md:px-10">
         <h3 className="text-4xl font-bold text-center">How It Works</h3>
         <p className="text-lg text-gray-700 text-center md:mb-10">Our comprehensive 5-step process ensures your move is handled with professional care <br /> and attention to every detail, from initial planning to settling into your new space.</p>
-        <div className="flex gap-3 flex-wrap justify-center px-40">
+        <div className="flex gap-3 flex-wrap justify-center px-3 md:px-40">
           {STEPS.map(s => (
             <HowItWorkCard key={s.id} step={s} />
           ))}
         </div>
 
-        <div className="w-full bg-blue-700 text-white flex flex-col items-center gap-6 p-8 rounded-2xl text-center">
+        <div className="w-full bg-blue-700 text-white flex flex-col items-center gap-3 md:gap-6 p-3 md:p-8 rounded-2xl text-center">
           <h3 className="text-2xl font-bold">Ready to Experience Our Process?</h3>
           <p>Our proven 5-step method has successfully moved over 15,000 families and businesses. <br /> Let us make your next move the smoothest one yet.</p>
           <div className="flex gap-3 justify-center">
@@ -152,32 +153,32 @@ export default function Page() {
       </section>
 
       {/* Our Services */}
-      <section className="flex flex-col gap-10 items-center pb-36 pt-16 px-10">
+      <section className="flex flex-col gap-10 items-center pb-36 pt-16 px-2 md:px-10">
         <h3 className="text-4xl font-bold text-center">Our Services</h3>
         <p className="text-lg text-gray-700 text-center md:mb-10">Comprehensive moving solutions tailored to your specific needs</p>
 
-        <div className="flex gap-10 justify-between items-start">
-          <div className="w-2/4 flex flex-col items-center justify-center gap-10 ">
+        <div className="flex max-md:flex-col gap-10 justify-between items-start">
+          <div className="w-full md:w-2/4 flex flex-col items-center justify-center gap-10 max-md:order-2">
             <div className="w-full flex flex-col items-stretch gap-6">
               {OUR_SERVICES.map(service => (
                 <ServiceCard key={service.id} service={service} />
               ))}
             </div >
           </div>
-          <div className="w-[45%] h-full">
+          <div className="w-full md:w-[45%] h-full max-md:order-1">
             <img className=" border-2 border-gray-100 rounded-2xl " src={"/our-services.jpg"} />
           </div>
         </div>
       </section >
 
       {/* What Our Customers Say */}
-      <section className="flex flex-col items-center justify-center gap-10 pb-36 px-10">
+      <section className="flex flex-col items-center justify-center gap-10 pb-36 px-2 md:px-10">
         <h3 className="text-4xl font-bold text-center">What Our Customers Say</h3>
         <p className="text-lg text-gray-700 text-center md:mb-10">Real experiences from satisfied customers who trusted us with their moves</p>
 
-        <div className="w-full flex gap-5 justify-center">
+        <div className="w-full flex flex-col md:flex-row gap-5 justify-center">
 
-          <div className="shadow-2xl p-8 rounded-2xl flex flex-col items-start gap-5 w-[30%]">
+          <div className="shadow-xl p-4 md:p-8 rounded-2xl flex flex-col items-start gap-5 w-full md:w-[30%]">
             <div className="flex gap-1">
               <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
               <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
@@ -197,7 +198,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="shadow-2xl p-8 rounded-2xl flex flex-col items-start gap-5 w-[30%]">
+          <div className="shadow-xl p-4 md:p-8 rounded-2xl flex flex-col items-start gap-5 w-full md:w-[30%]">
             <div className="flex gap-1">
               <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
               <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
@@ -217,7 +218,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="shadow-2xl p-8 rounded-2xl flex flex-col items-start gap-5 w-[30%]">
+          <div className="shadow-xl p-4 md:p-8 rounded-2xl flex flex-col items-start gap-5 w-full md:w-[30%]">
             <div className="flex gap-1">
               <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
               <StarIcon className="fill-yellow-400 text-yellow-400" size={"16"} />
@@ -240,33 +241,31 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="bg-blue-700 flex flex-col items-center justify-center gap-5 py-36 px-10 text-white">
+      <section className="bg-blue-700 flex flex-col items-center justify-center gap-5 py-36 px-2 md:px-10 text-white">
         <h3 className="text-4xl font-bold text-center">Why Choose Metro Moving?</h3>
-        <p className="text-lg text-gray-200 text-center md:mb-10">We're committed to providing exceptional moving services that <br /> exceed your expectations</p>
+        <p className="text-lg text-gray-200 text-center md:mb-10">We're committed to providing exceptional moving services that <br className="max-md:hidden" /> exceed your expectations</p>
 
-        <div className="md:w-2/3 flex gap-5 justify-center">
-
+        <div className="md:w-2/3 flex flex-col md:flex-row gap-5 justify-center max-md:mt-10">
           {/* Licensed & Insured */}
-          <div className="w-1/3 flex flex-col justify-center items-center gap-3">
+          <div className="w-full md:w-1/3 flex flex-col justify-center items-center gap-3">
             <div className="p-5 rounded-full bg-blue-800"> <ShieldIcon size={"24"} /> </div>
             <div className="text-lg font-semibold">Licensed & Insured</div>
             <div className="text-gray-200 text-center">Fully licensed and insured for your peace of mind. Your belongings are protected every step of the way.</div>
           </div>
 
           {/* Affordable Rates */}
-          <div className="w-1/3 flex flex-col justify-center items-center gap-3">
+          <div className="w-full md:w-1/3 flex flex-col justify-center items-center gap-3">
             <div className="p-5 rounded-full bg-blue-800"> <DollarSignIcon size={"24"} /> </div>
             <div className="text-lg font-semibold">Affordable Rates</div>
             <div className="text-gray-200 text-center">Competitive pricing without compromising on quality. No hidden fees, just transparent and fair pricing.</div>
           </div>
 
           {/* Nationwide Coverage */}
-          <div className="w-1/3 flex flex-col justify-center items-center gap-3">
+          <div className="w-full md:w-1/3 flex flex-col justify-center items-center gap-3">
             <div className="p-5 rounded-full bg-blue-800"> <EarthIcon size={"24"} /> </div>
             <div className="text-lg font-semibold">Nationwide Coverage</div>
             <div className="text-gray-200 text-center">Local, long-distance, and cross-country moves. We go wherever you need to go.</div>
           </div>
-
         </div>
       </section>
 
