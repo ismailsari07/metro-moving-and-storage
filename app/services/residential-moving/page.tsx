@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { CircleCheckBigIcon } from "lucide-react";
 import { motion } from "framer-motion"
+import type { Variants } from "framer-motion"
 
 export default function Page() {
   const container = {
@@ -12,9 +13,16 @@ export default function Page() {
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 24 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    show: {
+      opacity: 1,
+      y: 0,
+      // bazen ease'in string tipi eski sürümlerde şikayet eder:
+      // istersen alttaki satırı cubic-bezier'e çevir:
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+      // veya geçici: ease: "easeOut" as any
+    },
   };
 
 
@@ -71,7 +79,10 @@ export default function Page() {
           </div>
         </div>
 
-        <motion.img variants={item} src={"/residential-moving.jpg"} className="rounded-xl w-2xl max-md:order-1" />
+        <motion.img
+          variants={item}
+          src={"/residential-moving.jpg"}
+          className="rounded-xl w-2xl max-md:order-1" />
       </motion.div >
 
     </div >

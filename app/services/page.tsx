@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CircleCheckBigIcon, HomeIcon, ShoppingBagIcon, StoreIcon } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion"
 
 export default function Services() {
   const container = {
@@ -12,10 +13,16 @@ export default function Services() {
       transition: { staggerChildren: 0.15, delayChildren: 0.1 },
     },
   };
-
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 24 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+    show: {
+      opacity: 1,
+      y: 0,
+      // bazen ease'in string tipi eski sürümlerde şikayet eder:
+      // istersen alttaki satırı cubic-bezier'e çevir:
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+      // veya geçici: ease: "easeOut" as any
+    },
   };
 
   return (
