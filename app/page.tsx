@@ -14,6 +14,7 @@ import HowItWorkCard from "@/components/how-it-work-card";
 import ServiceCard from "@/components/service";
 import React from "react"
 import { OUR_SERVICES } from "@/lib/data/our-services";
+import { motion } from "framer-motion";
 
 export default function Page() {
   const [open, setOpen] = React.useState(false);
@@ -28,109 +29,126 @@ export default function Page() {
   return (
     <main className="">
       {/* Header Section */}
-      <header className="relative text-white w-full">
-        <div className="md:w-3/4 md:absolute md:top-1/2 md:left-1/2 md:-translate-y-1/2 md:-translate-x-1/2 flex flex-col md:flex-row justify-between items-center md:gap-20 z-10">
+      <motion.div
+        className="w-full"
+      >
+        <header className="relative text-white w-full">
+          <div className="md:w-3/4 md:absolute md:top-1/2 md:left-1/2 md:-translate-y-1/2 md:-translate-x-1/2 flex flex-col md:flex-row justify-between items-center md:gap-20 z-10">
 
-          {/* Header Text */}
-          <div className="md:w-3/5 flex flex-col items-center md:items-start gap-3 md:gap-6 max-md:p-2 max-md:my-6 max-md:text-center">
-            <span className="px-3 rounded-2xl bg-blue-600 text-xs md:text-sm md:font-semibold">🏆 Trusted Moving Professionals</span>
-            <h1 className="text-3xl md:text-6xl font-semibold text-gray-800 md:text-white">Stress-Free, Reliable <span className="text-blue-400"> Moving Services</span></h1>
-            <p className="text-lg text-gray-800 md:text-white">Experience seamless moving with our professional team. From residential moves to commercial relocations, we handle your belongings with care and precision.</p>
+            {/* Header Text */}
+            <motion.div
+              className="md:w-3/5 flex flex-col items-center md:items-start gap-3 md:gap-6 max-md:p-2 max-md:my-6 max-md:text-center"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <span className="px-3 rounded-2xl bg-blue-600 text-xs md:text-sm md:font-semibold">🏆 Trusted Moving Professionals</span>
+              <h1 className="text-3xl md:text-6xl font-semibold text-gray-800 md:text-white">Stress-Free, Reliable <span className="text-blue-400"> Moving Services</span></h1>
+              <p className="text-lg text-gray-800 md:text-white">Experience seamless moving with our professional team. From residential moves to commercial relocations, we handle your belongings with care and precision.</p>
+            </motion.div>
+
+            {/* Header Quote Form */}
+            <motion.div
+              className="md:w-3/5 hidden md:flex flex-col justify-between items-stretch gap-4 p-3 md:p-6 max-md:mx-2 bg-[#f9f7f5] shadows-2xl shadow-slate-200 border-2 border-gray-200 rounded-2xl text-[#141327]"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+
+            >
+              <h3 className="text-2xl font-bold mb-6">Get a Free Quote</h3>
+
+              {/* Full Name */}
+              <div className="grid w-full items-center gap-3">
+                <Label htmlFor="full-name">Full Name</Label>
+                <Input type="text" id="full-name" placeholder="Full Name" />
+              </div>
+
+              {/* Email Adress */}
+              <div className="grid w-full items-center gap-3">
+                <Label htmlFor="email">Email</Label>
+                <Input type="email" id="email" placeholder="Email" />
+              </div>
+
+              {/* Phone Number */}
+              <div className="grid w-full items-center gap-3">
+                <Label htmlFor="phone-number">Phone Number</Label>
+                <Input type="number" id="phone-number" placeholder="Phone Number" />
+              </div>
+
+              <div className="flex justify-between items-center gap-4">
+                {/* Moving From */}
+                <div className="grid w-full max-w-sm items-center gap-3">
+                  <Label htmlFor="from">Moving From</Label>
+                  <Input type="text" id="from" placeholder="City/Province" />
+                </div>
+                {/* Moving To */}
+                <div className="grid w-full max-w-sm items-center gap-3">
+                  <Label htmlFor="to">Moving To</Label>
+                  <Input type="text" id="to" placeholder="City/Province" />
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center gap-4">
+                {/* Date */}
+                <div className="grid w-full items-center gap-3">
+                  <Label htmlFor="date">Date</Label>
+                  <Input type="date" id="date" placeholder="Date" />
+                </div>
+                {/* Size Of Move */}
+                <div className="grid w-full items-center gap-3">
+                  <Label htmlFor="size">Size Of Move</Label>
+                  <Popover open={open} onOpenChange={setOpen}>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        role="combobox"
+                        aria-expanded={open}
+                        className="justify-between bg-accent"
+                      >
+                        {sizeOfMove
+                          ? sizeList.find((size) => size.value === sizeOfMove)?.label
+                          : "Select Size..."}
+                        <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      </Button>
+                    </PopoverTrigger>
+
+                    <PopoverContent className="w-[200px] p-0">
+                      <Command>
+                        <CommandInput placeholder="Search Size..." />
+                        <CommandList>
+                          <CommandEmpty>No size found.</CommandEmpty>
+                          <CommandGroup>
+                            {sizeList.map((size) => (
+                              <CommandItem
+                                key={size.value}
+                                value={size.value}
+                                onSelect={(currentValue) => {
+                                  setSizeOfMove(currentValue === sizeOfMove ? "" : currentValue)
+                                  setOpen(false)
+                                }}
+                              >
+                                <CheckIcon className={sizeOfMove === size.value ? "opacity-100" : "opacity-0"} />
+                                {size.label}
+                              </CommandItem>
+                            ))}
+                          </CommandGroup>
+                        </CommandList>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
+                </div>
+              </div>
+
+              <Button variant={"default"} size={"lg"} className="mt-6"> Get My Free Quote</Button>
+            </motion.div>
+
           </div>
 
-          {/* Header Quote Form */}
-          <div className="md:w-3/5 hidden md:flex flex-col justify-between items-stretch gap-4 p-3 md:p-6 max-md:mx-2 bg-[#f9f7f5] shadows-2xl shadow-slate-200 border-2 border-gray-200 rounded-2xl text-[#141327]">
-            <h3 className="text-2xl font-bold mb-6">Get a Free Quote</h3>
-
-            {/* Full Name */}
-            <div className="grid w-full items-center gap-3">
-              <Label htmlFor="full-name">Full Name</Label>
-              <Input type="text" id="full-name" placeholder="Full Name" />
-            </div>
-
-            {/* Email Adress */}
-            <div className="grid w-full items-center gap-3">
-              <Label htmlFor="email">Email</Label>
-              <Input type="email" id="email" placeholder="Email" />
-            </div>
-
-            {/* Phone Number */}
-            <div className="grid w-full items-center gap-3">
-              <Label htmlFor="phone-number">Phone Number</Label>
-              <Input type="number" id="phone-number" placeholder="Phone Number" />
-            </div>
-
-            <div className="flex justify-between items-center gap-4">
-              {/* Moving From */}
-              <div className="grid w-full max-w-sm items-center gap-3">
-                <Label htmlFor="from">Moving From</Label>
-                <Input type="text" id="from" placeholder="City/Province" />
-              </div>
-              {/* Moving To */}
-              <div className="grid w-full max-w-sm items-center gap-3">
-                <Label htmlFor="to">Moving To</Label>
-                <Input type="text" id="to" placeholder="City/Province" />
-              </div>
-            </div>
-
-            <div className="flex justify-between items-center gap-4">
-              {/* Date */}
-              <div className="grid w-full items-center gap-3">
-                <Label htmlFor="date">Date</Label>
-                <Input type="date" id="date" placeholder="Date" />
-              </div>
-              {/* Size Of Move */}
-              <div className="grid w-full items-center gap-3">
-                <Label htmlFor="size">Size Of Move</Label>
-                <Popover open={open} onOpenChange={setOpen}>
-                  <PopoverTrigger asChild>
-                    <Button
-                      variant="outline"
-                      role="combobox"
-                      aria-expanded={open}
-                      className="justify-between bg-accent"
-                    >
-                      {sizeOfMove
-                        ? sizeList.find((size) => size.value === sizeOfMove)?.label
-                        : "Select Size..."}
-                      <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                    </Button>
-                  </PopoverTrigger>
-
-                  <PopoverContent className="w-[200px] p-0">
-                    <Command>
-                      <CommandInput placeholder="Search Size..." />
-                      <CommandList>
-                        <CommandEmpty>No size found.</CommandEmpty>
-                        <CommandGroup>
-                          {sizeList.map((size) => (
-                            <CommandItem
-                              key={size.value}
-                              value={size.value}
-                              onSelect={(currentValue) => {
-                                setSizeOfMove(currentValue === sizeOfMove ? "" : currentValue)
-                                setOpen(false)
-                              }}
-                            >
-                              <CheckIcon className={sizeOfMove === size.value ? "opacity-100" : "opacity-0"} />
-                              {size.label}
-                            </CommandItem>
-                          ))}
-                        </CommandGroup>
-                      </CommandList>
-                    </Command>
-                  </PopoverContent>
-                </Popover>
-              </div>
-            </div>
-
-            <Button variant={"default"} size={"lg"} className="mt-6"> Get My Free Quote</Button>
-          </div>
-
-        </div>
-
-        <img src={"/truck-highway-sunset.jpg"} alt="truck image" className="relative max-h-[800px] w-[95%] md:w-full brightness-50 max-md:mt-6 max-md:rounded-xl max-md:mx-auto" />
-      </header>
+          <img src={"/truck-highway-sunset.jpg"} alt="truck image" className="relative max-h-[800px] w-[95%] md:w-full brightness-50 max-md:mt-6 max-md:rounded-xl max-md:mx-auto" />
+        </header>
+      </motion.div>
 
 
 
@@ -141,7 +159,9 @@ export default function Page() {
             <p className="text-lg text-gray-600 md:w-1/2">Moving between Canada and the US involves complex regulations, documentation, and logistics. Our specialized knowledge ensures your international move is handled with precision and care.</p>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-5 justify-center mt-10">
+          <div
+            className="flex flex-col md:flex-row gap-5 justify-center mt-10"
+          >
             {/* "Canada to USA" Card */}
             <div className="shadow-2xl md:w-1/2 rounded-2xl">
               <div className="bg-red-100 flex justify-center items-center gap-5 p-5 rounded-t-2xl">
