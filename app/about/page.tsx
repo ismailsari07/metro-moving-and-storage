@@ -86,7 +86,7 @@ export default function Page() {
         </motion.div>
       </motion.div>
 
-      <div className="py-28 md:px-40 bg-gray-50">
+      <div className="py-28 px-2 md:px-40 bg-gray-50">
         <div className="flex flex-col items-center text-center gap-5">
           <h3 className="text-4xl text-gray-800 font-bold">Cross-Border Moving Expertise</h3>
           <p className="text-lg text-gray-600 md:w-1/2">Moving between Canada and the US involves complex regulations, documentation, and logistics. Our specialized knowledge ensures your international move is handled with precision and care.</p>
