@@ -1,7 +1,5 @@
 'use client';
 
-import Footer from "@/components/footer"
-import Navbar from "@/components/navbar"
 import { Button } from "@/components/ui/button"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
 import { Input } from "@/components/ui/input"
