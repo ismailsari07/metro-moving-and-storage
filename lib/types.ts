@@ -16,6 +16,7 @@ export type Step = {
 
 export type OurService = {
   id: 1 | 2 | 3;
+  url: string,
   title: string;
   description: string;
   highlights: string[];     // the three chips

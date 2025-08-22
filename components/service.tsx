@@ -1,6 +1,7 @@
 import { OurService } from "@/lib/types";
 import { ArrowBigRightIcon, CircleCheckBigIcon, HomeIcon } from "lucide-react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function ServiceCard({ service }: { service: OurService }) {
   return (
@@ -16,7 +17,7 @@ export default function ServiceCard({ service }: { service: OurService }) {
           <span className={`px-3 py-1 rounded-2xl ${service.highlightBg} ${service.iconColor} text-sm flex items-center gap-2`}><CircleCheckBigIcon className="size-4" />{service.highlights[1]}</span>
           <span className={`px-3 py-1 rounded-2xl ${service.highlightBg} ${service.iconColor} text-sm flex items-center gap-2`}><CircleCheckBigIcon className="size-4" />{service.highlights[2]}</span>
         </div>
-        <Button className={`${service.buttonBg} text-white w-fit`} variant={"service"} size={"lg"}>Learn More <ArrowBigRightIcon /> </Button>
+        <Link href={service.url}><Button className={`${service.buttonBg} text-white w-fit`} variant={"service"} size={"lg"}>Learn More <ArrowBigRightIcon /></Button></Link>
       </div>
     </div>
 

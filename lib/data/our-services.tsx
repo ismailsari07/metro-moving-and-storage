@@ -4,6 +4,7 @@ export const OUR_SERVICES: readonly OurService[] = [
   {
     id: 1,
     title: "Residential Moving",
+    url: "services/residential-moving",
     description:
       "Complete home moving services with careful handling of your personal belongings",
     highlights: [
@@ -20,6 +21,7 @@ export const OUR_SERVICES: readonly OurService[] = [
   {
     id: 2,
     title: "Commercial Moving",
+    url: "services/commercial-moving",
     description:
       "Minimize business downtime with our efficient office and commercial relocation services",
     highlights: [
@@ -36,6 +38,7 @@ export const OUR_SERVICES: readonly OurService[] = [
   {
     id: 3,
     title: "Storage Services",
+    url: "services/storage-service",
     description:
       "Secure, climate-controlled storage solutions for short-term and long-term needs",
     highlights: [
