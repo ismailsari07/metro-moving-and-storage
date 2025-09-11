@@ -30,7 +30,7 @@ export default function Navbar() {
       </div>
       <div className="hidden md:flex gap-4 items-center">
         <Button variant={"secondary"} size={"lg"}>
-          Call Now
+          <a href="tel:+18888934767">Call Now</a>
         </Button>
         <Link href={"/contact"}>
           <Button size={"lg"}>Get A Quote</Button>

@@ -53,9 +53,17 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-3 max-md:text-center">
           <div className="text-lg font-semibold">Company</div>
-          <div className="text-gray-400">(555) 123 Move</div>
-          <div className="text-gray-400">info@metromoving.com</div>
-          <div className="text-gray-400">Mississauga, Ontario, Canada</div>
+          <div className="text-gray-400">
+            <a href="tel:+18888934767">888 983 4767</a>
+          </div>
+          <div className="text-gray-400">
+            <a href="tel:+16476002353">647 600 2353</a>
+          </div>
+          <div className="text-gray-400">
+            <a href="mailto:info@metromovingstorage.ca">
+              info@metromovingstorage.ca
+            </a>
+          </div>
         </div>
       </div>
       <hr className="border-gray-700" />

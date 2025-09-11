@@ -58,13 +58,15 @@ export default function Page() {
             variants={item}
             className="flex gap-2 items-center text-green-300"
           >
-            <PhoneIcon className="size-6" />{" "}
-            <a href="tel:+4934838484">+1 (555) 482 39 93</a>
+            <PhoneIcon className="size-6" />
+            <a href="tel:+16476002353">647 600 2353</a>
           </motion.div>
 
           <motion.div variants={item} className="flex gap-2 items-center">
-            <MailboxIcon className="size-6" />{" "}
-            <a href="mail:">metro@moving.com</a>
+            <MailboxIcon className="size-6" />
+            <a href="mailto:info@metromovingstorage.ca">
+              info@metromovingstorage.ca
+            </a>
           </motion.div>
 
           <motion.div variants={item} className="flex gap-2 items-center">
