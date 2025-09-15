@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="flex flex-col gap-3 max-md:text-center">
           <div className="text-lg font-semibold">Company</div>
           <div className="text-gray-400">
-            <a href="tel:+18888934767">888 983 4767</a>
+            <a href="tel:+18668626060">866 862 6060</a>
           </div>
           <div className="text-gray-400">
             <a href="tel:+16476002353">647 600 2353</a>

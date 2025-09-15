@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,12 +59,11 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MovingCompany",
-    "name": "Metro Moving & Storage",
-    "url": process.env.SITE_URL ?? "https://metro-moving-and-storage.vercel.app",
-    "areaServed": ["Canada"],
-    // Elindeki gerçek bilgilerle doldur:
-    // "telephone": "+1-XXX-XXX-XXXX",
-    // "email": "info@... ",
+    name: "Metro Moving & Storage",
+    url: process.env.SITE_URL ?? "https://metro-moving-and-storage.vercel.app",
+    areaServed: ["Canada"],
+    telephone: "+1-866-862-6060",
+    email: "info@metromovingstorage.ca",
     // "address": { "@type": "PostalAddress", "addressLocality": "City", "addressRegion": "Province", "addressCountry": "CA" }
   };
   return (
@@ -76,7 +75,10 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Footer />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );
