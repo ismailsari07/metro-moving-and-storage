@@ -1,38 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Metro Moving & Storage — Professional Moving Company in Toronto
 
-## Getting Started
+A responsive and modern website built for a Toronto-based moving and storage company.  
+It highlights services, booking, and contact options in a clean and professional layout.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Next.js** — Framework for fast, scalable, and SEO-friendly web apps  
+- **Tailwind CSS** — Utility-first CSS for responsive and consistent design  
+- **Shadcn UI** — Reusable, accessible UI components  
+- **Framer Motion** — Smooth animations and transitions  
+- **Resend** — Handles contact form submissions and sends emails directly to the company  
+- **Vercel** — Deployment for high performance and reliability  
+
+## ✨ Features
+
+- Fully responsive design for all devices  
+- Booking form integrated with **Resend** email service  
+- Animated transitions with Framer Motion  
+- SEO-friendly structure and fast page load  
+- Clean and accessible UI built with Shadcn components  
+- Deployed and optimized on Vercel  
+
+## 🔧 Environment Variables
+
+To run the project, you’ll need a `.env` file in the root directory with the following variable:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+RESEND_API_KEY=your_resend_api_key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔗 Links
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🌐 **Live Website:** [metromovingstorage.ca](https://metromovingstorage.ca/)  
+- 💻 **GitHub Repository:** [github.com/ismailsari07/metro-moving-and-storage](https://github.com/ismailsari07/metro-moving-and-storage)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Setup
 
-## Learn More
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/ismailsari07/metro-moving-and-storage.git
+   ```
+2. Install dependencies  
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file and add your **RESEND_API_KEY**  
+4. Run the development server  
+   ```bash
+   npm run dev
+   ```
+5. Visit [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+## 🔒 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Private project — created exclusively for **Metro Moving & Storage**.  
+Not intended for public redistribution or reuse.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# metro-moving-and-storage
-# metro-moving-and-storage
