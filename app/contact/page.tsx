@@ -62,6 +62,14 @@ export default function Page() {
             <a href="tel:+16476002353">647 600 2353</a>
           </motion.div>
 
+          <motion.div
+            variants={item}
+            className="flex gap-2 items-center text-green-300"
+          >
+            <PhoneIcon className="size-6" />
+            <a href="tel:+14162193169">416 219 3169</a>
+          </motion.div>
+
           <motion.div variants={item} className="flex gap-2 items-center">
             <MailboxIcon className="size-6" />
             <a href="mailto:info@metromovingstorage.ca">

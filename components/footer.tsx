@@ -60,6 +60,9 @@ export default function Footer() {
             <a href="tel:+16476002353">647 600 2353</a>
           </div>
           <div className="text-gray-400">
+            <a href="tel:+14162193169">416 219 3169</a>
+          </div>
+          <div className="text-gray-400">
             <a href="mailto:info@metromovingstorage.ca">
               info@metromovingstorage.ca
             </a>
